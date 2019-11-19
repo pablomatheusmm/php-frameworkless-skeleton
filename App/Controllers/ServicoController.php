@@ -2,18 +2,12 @@
 
 namespace App\Controllers;
 
-use App\Services\MyNewService;
-use App\Services\MyService;
-
 class ServicoController
 {
-    protected $service;
-    protected $newService;
 
-    public function __construct(MyService $service, MyNewService $newService)
+    public function __construct()
     {
-        $this->service    = $service;
-        $this->newService = $newService;
+
     }
 
     public function salvar()
@@ -23,7 +17,7 @@ class ServicoController
 
     public function editar()
     {
-        echo 'SALVEI O QUE TINHA QUE SALVAR';
+        echo 'EDITEI O QUE TINHA QUE EDITAR';
     }
 
     public function editarPost()
