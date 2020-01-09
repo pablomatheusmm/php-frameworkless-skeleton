@@ -1,6 +1,7 @@
 <?php
 
-use App\Core\App\Factory\AppFactory;
+use App\Core\App;
+use App\Core\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +28,5 @@ require_once __DIR__ . '/../vendor/autoload.php';
 */
 require_once __DIR__ . '/../bootstrap/bootstrap.php';
 
-$app = new AppFactory();
-$app->createApp()->run();
+$app = new App();
+$app->run(new Request());

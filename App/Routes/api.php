@@ -6,7 +6,8 @@
  * Time: 12:11
  */
 
-use App\Providers\RouteServiceProvider as Router;
+use App\Core\Router\Router;
 
 Router::get('servico/editar/', 'ServicoController@editar');
+Router::get('servico/{$id}', 'ServicoController@editar');
 Router::post('servico/editar/', 'ServicoController@editarPost');

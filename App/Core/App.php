@@ -6,31 +6,28 @@
  * Time: 16:10
  */
 
-namespace App\Core\App;
+namespace App\Core;
 
 use App\Core\Exceptions\ActionNotFoundException;
 use App\Core\Exceptions\ClassNotFoundException;
 use App\Core\Exceptions\MethodNotAllowedException;
 use App\Core\Exceptions\RouteNotFoundException;
-use App\Core\Router;
+use App\Providers\RouteServiceProvider;
+use Exception;
+use ReflectionException;
 
 class App
 {
-    private $router;
-
-    public function __construct(Router $router)
-    {
-        $this->router = $router;
-    }
-
     /**
      * @throws ActionNotFoundException
      * @throws ClassNotFoundException
      * @throws MethodNotAllowedException
      * @throws RouteNotFoundException
+     * @throws ReflectionException
+     * @throws Exception
      */
-    public function run()
+    public function run(Request $request)
     {
-        $this->router->resolve();
+        RouteServiceProvider::resolve($request->get('url'));
     }
 }
