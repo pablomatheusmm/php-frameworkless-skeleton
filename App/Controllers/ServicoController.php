@@ -13,18 +13,8 @@ class ServicoController
 
     public function editar(Request $request)
     {
-        //dd('eita');
         $param = $request->get('id');
-
-        $soma     = 0;
-        $iterator = 0;
-
-        while (true) {
-            echo 'JOAO';
-            break;
-        }
-
-        echo 'Nissama';
+        dd($param);
     }
 
     public function editarPost()
