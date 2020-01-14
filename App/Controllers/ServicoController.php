@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Core\Request;
+use Exception;
 
 class ServicoController
 {
@@ -13,8 +14,11 @@ class ServicoController
 
     public function editar(Request $request)
     {
-        $param = $request->get('id');
-        dd($param);
+        try {
+            $param = $request->get('id');
+            dd($param);
+        } catch (Exception $e) {
+        }
     }
 
     public function editarPost()
