@@ -22,7 +22,8 @@ $handler = new PrettyPageHandler();
 $handler->setPageTitle("Whoops! There was a problem.");
 $whoops->prependHandler($handler);
 $whoops->register();
-
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv->load();
 /*
  * Route files definition
  */

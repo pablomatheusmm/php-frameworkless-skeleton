@@ -15,6 +15,7 @@ class ServicoController
     public function editar(Request $request)
     {
         try {
+            dd(getenv("S3_BUCKET"));
             $param = $request->get('id');
             dd($param);
         } catch (Exception $e) {
