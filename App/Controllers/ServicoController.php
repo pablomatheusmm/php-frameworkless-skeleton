@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\Request;
 use Exception;
+use App\Repositories\UserRepository;
 
 class ServicoController
 {
@@ -15,7 +16,6 @@ class ServicoController
     public function editar(Request $request)
     {
         try {
-            dd(getenv("S3_BUCKET"));
             $param = $request->get('id');
             dd($param);
         } catch (Exception $e) {
@@ -26,4 +26,9 @@ class ServicoController
     {
         echo 'OPA POST';
     }
+
+    public function teste(){
+        var_dump((new UserRepository())->getAll());
+    }
+
 }

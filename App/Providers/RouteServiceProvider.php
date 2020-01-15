@@ -41,7 +41,8 @@ class RouteServiceProvider
      */
     public static function resolve(string $route): void
     {
-        $httpMethod = $_SERVER['REQUEST_METHOD'];
+        $httpMethod = trim($_SERVER['REQUEST_METHOD'], '/');
+        $route = trim($route, '/');
 
         if (array_key_exists($route, Router::getRoutes())) {
             $simpleRoute = new SimpleRoute();

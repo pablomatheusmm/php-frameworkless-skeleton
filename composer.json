@@ -7,6 +7,7 @@
     "require": {
         "filp/whoops": "^2.5",
         "symfony/var-dumper": "^4.3",
-        "vlucas/phpdotenv": "^4.1"
+        "vlucas/phpdotenv": "^4.1",
+        "ext-pdo": "*"
     }
 }

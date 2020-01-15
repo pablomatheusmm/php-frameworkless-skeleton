@@ -41,6 +41,15 @@ class Router
      * @param string $route
      * @param string $action
      */
+    public static function put(string $route, string $action): void
+    {
+        self::addRoute($route, $action, 'PUT');
+    }
+
+    /**
+     * @param string $route
+     * @param string $action
+     */
     public static function delete(string $route, string $action): void
     {
         self::addRoute($route, $action, 'DELETE');
@@ -53,6 +62,8 @@ class Router
      */
     private static function addRoute(string $routeConfig, string $action, string $method)
     {
+        $routeConfig = trim($routeConfig, '/');
+
         if (self::isRouteRegex($routeConfig)) {
             self::$routesRegex[$routeConfig][$method] = $action;
         } else {

@@ -8,6 +8,7 @@
 
 use App\Core\Router\Router;
 
+Router::get('teste', 'ServicoController@teste');
 Router::get('servico/editar/', 'ServicoController@editar');
 Router::get('servico/{$id}', 'ServicoController@editar');
 Router::post('servico/editar/', 'ServicoController@editarPost');
